@@ -5,11 +5,12 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        end = []
+        end = {}
         for i,val in enumerate(nums):
             x = target - val
-            if x in nums and nums.index(x) != i and i not in end:
-                end.append(i)
-                end.append(nums.index(x))
-        return end
+            if x not in end:
+                end[val] = i
+            else:
+                return [end[x],i]
+​
         
