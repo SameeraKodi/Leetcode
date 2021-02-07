@@ -1,19 +1,17 @@
-class Solution(object):
-    def singleNumber(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        nums.sort()
-        print(nums)
-        while len(nums) >1:
-            if nums[0] == nums[1]:
-                nums.pop(0)
-                nums.pop(0)
-                
-​
-            else:
-                return nums[0]
-        return nums[0]
-        
-        
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        dic ={}
+        count = 0
+        for i in nums:
+            if i in dic:
+                continue
+            else:
+                dic[i]  = nums.count(i)
+        for k,v in dic.items():
+            if v ==1:
+                return k
+                
+
+                
+            
+        
