@@ -1,16 +1,17 @@
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        end = {}
-        for i,val in enumerate(nums):
-            x = target - val
-            if x not in end:
-                end[val] = i
-            else:
-                return [end[x],i]
-​
-        
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        lst = []
+        for i,value in enumerate(nums):
+            x = target-value
+            if x in nums and i != nums.index(x):
+                lst.append(i)
+                lst.append(nums.index(x))
+                break
+            else:
+                           continue
+                           
+        return lst
+                
+                
+            
+        
