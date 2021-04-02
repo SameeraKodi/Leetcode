@@ -1,7 +1,6 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        
-        #keep the initital buy price as the first day
+ #keep the initital buy price as the first day
         buy_price = prices[0]
         #initial profit as 0 ( works well for monotonically decreasing case)
         profit = 0
@@ -17,13 +16,4 @@ class Solution:
                 
                 
         return profit
-                
-                
-            
-            
-            
-
-                
-        
-        
         
