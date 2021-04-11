@@ -1,21 +1,21 @@
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         
-        #with division:
-        prod = 1
+        l = len(nums)
+        left_prod = [1]*l
+        right_prod = [1]*l
         
-        for i in nums:
-            if i !=0:
-                prod = prod*i
-            else:
-                prod = prod
+        #calculating left product
+        for i in range(1,len(nums)):
+            left_prod[i] = nums[i-1]*left_prod[i-1]
+            
+        for i in range(-2,-len(nums)-1,-1):
+            right_prod[i] = nums[i+1]*right_prod[i+1]
+            
+        return [left_prod[k]*right_prod[k] for k in range(len(nums))]
+
         
-        if nums.count(0) > 1:
-            return [0]*len(nums)
-        elif nums.count(0) == 1:
-            return [0 if k != 0 else prod for k in nums]
-        else:
-            return [int(prod/k) for k in nums]
+
         
         
         
@@ -44,7 +44,7 @@ class Solution:
             
 
         
-#With division
+# #With division
 
 #         product = 1
         
@@ -52,17 +52,14 @@ class Solution:
 #             if i != 0:
 #                 product = product*i
 #             else:
-#                 product = product*1
+#                 product = product
                 
 
             
-#         if 0 in nums:
-#             if nums.count(0) > 1:
-#                 return [0*i for i in nums]
-#             else:
-#                 return [0 if p!=0 else product for p in nums]
-            
-#         #with division   
+#         if nums.count(0) > 1:
+#             return [0]*len(nums)
+#         elif nums.count(0) == 1:
+#             return [0 if k != 0 else product for k in nums]
 #         else:
 #             return [int(product/k) for k in nums]
         
