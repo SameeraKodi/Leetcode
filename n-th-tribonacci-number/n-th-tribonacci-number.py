@@ -1,5 +1,9 @@
 class Solution:
     def tribonacci(self, n: int) -> int:
+        
+            
+        
+        
         T = [0,1,1]
 
         for i in range((n+1)-3):
@@ -8,6 +12,7 @@ class Solution:
             T.append(s)
         return T[n]
             
+        
 
             
         
