@@ -1,5 +1,41 @@
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         lst = []
         
         rowstart = 0
@@ -8,15 +44,15 @@ class Solution:
         colend = len(matrix[0]) - 1
         
         while rowstart <= rowend and colstart <= colend:
-            print("1")
+
             for i in range(colstart,colend+1):
                 lst.append(matrix[rowstart][i])
             rowstart += 1
-            print('2')
+
             for i in range(rowstart,rowend+1):
                 lst.append(matrix[i][colend])
             colend -= 1
-            print('3')
+
             if rowstart <= rowend:
                 for i in range(colend,colstart-1,-1):
                     lst.append(matrix[rowend][i])
